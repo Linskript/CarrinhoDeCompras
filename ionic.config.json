@@ -1,0 +1,7 @@
+{
+  "name": "Carrinho_de_Compras",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
