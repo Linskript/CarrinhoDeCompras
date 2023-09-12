@@ -1,0 +1,47 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button default-href="#"></ion-back-button>
+    </ion-buttons>
+    <ion-title style="text-align: center;">Editar Produtos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label position="floating">Código Identificador do Produto A Ser Editado</ion-label>
+    <ion-input [(ngModel)]="idEdit"></ion-input>
+  </ion-item>
+  <form [formGroup]="produtoEditado" (ngSubmit)="editaForm()">
+    <ion-item>
+      <ion-select aria-label="Tipo De Produto" placeholder="Selecione as novas categorias que o produto se encaixa : " [multiple]="true" formControlName="tipoProduto" interface="popover">
+        <ion-select-option value="roupas">Roupas</ion-select-option>
+        <ion-select-option value="eletronicos">Eletronicos</ion-select-option>
+        <ion-select-option value="casa">Casa</ion-select-option>
+        <ion-select-option value="beleza">Beleza</ion-select-option>
+        <ion-select-option value="livros">Livros</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Novo Nome do Produto</ion-label>
+      <ion-input formControlName="nomeProduto"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Novo Preço do Produto</ion-label>
+      <ion-input formControlName="valorProduto"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Nova Descrição Do Produto</ion-label>
+      <ion-input formControlName="descricaoProduto"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Novo Dia do Pedido</ion-label>
+      <ion-toggle formControlName="freteGratis">Frete Gratis</ion-toggle>
+    </ion-item>
+    <ion-button expand="full" type="submit" [disabled]="!produtoEditado.valid">Salvar</ion-button>
+  </form>
+</ion-content>

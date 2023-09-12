@@ -1,0 +1,19 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button default-href="#"></ion-back-button>
+    </ion-buttons>
+    <ion-title style="text-align: center;">Excluir Produtos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-item>
+    <ion-label position="floating">Código Identificador do Produto A Ser Excluido</ion-label>
+  <ion-input [(ngModel)]="idProdDelete"></ion-input>
+  </ion-item>
+  
+  <ion-item>
+    <ion-button (click)="DeletaProduto()">Excluir Produto</ion-button>
+  </ion-item>
+</ion-content>

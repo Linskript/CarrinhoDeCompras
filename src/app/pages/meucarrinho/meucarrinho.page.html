@@ -1,0 +1,21 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button default-href="#"></ion-back-button>
+    </ion-buttons>
+    <ion-title style="text-align: center;">Meu Carrinho</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-label *ngFor="let produto of documentList">
+  <div id="estiloProdutos">
+  <p>Código do Produto: {{ produto.idProduto }}</p>
+  <p>Tipo do Produto: {{ produto.tipoProduto }}</p>
+  <p>Nome do Produto: {{ produto.nomeProduto }}</p>
+  <p>Valor do Produto: R${{ produto.valorProduto }}</p>
+  <p>Descrição do Produto: {{ produto.descricaoProduto }}</p>
+  <ion-toggle [(ngModel)]="produto.freteGratis" disabled="true">Frete Gratis</ion-toggle> <br>
+</div>
+</ion-label>
+</ion-content>

@@ -1,0 +1,59 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button default-href="#"></ion-back-button>
+    </ion-buttons>
+    <ion-title style="text-align: center;">Cadastrar Produtos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="produto" (ngSubmit)="cadastraForm()">
+    <ion-item>
+      <ion-label position="floating">Código Identificador do Produto</ion-label>
+      <ion-input formControlName="idProduto"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-select aria-label="Tipo De Produto" placeholder="Selecione as categorias que o produto se encaixa : " [multiple]="true" formControlName="tipoProduto" interface="popover">
+        <ion-select-option value="roupas">Roupas</ion-select-option>
+        <ion-select-option value="eletronicos">Eletronicos</ion-select-option>
+        <ion-select-option value="casa">Casa</ion-select-option>
+        <ion-select-option value="beleza">Beleza</ion-select-option>
+        <ion-select-option value="livros">Livros</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Nome do Produto</ion-label>
+      <ion-input formControlName="nomeProduto"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Preço do Produto</ion-label>
+      <ion-input formControlName="valorProduto"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Descrição Do Produto</ion-label>
+      <ion-input formControlName="descricaoProduto"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Dia do Pedido</ion-label>
+      <ion-toggle formControlName="freteGratis">Frete Gratis</ion-toggle>
+    </ion-item>
+    <ion-button expand="full" type="submit" [disabled]="!produto.valid">Salvar</ion-button>
+  </form>
+
+  <ion-item>
+    <ion-label style="text-align: center;">
+      Guia Empregados :
+      Aqui é onde os produtos são cadastrados no sistema, todos os campos, com exceção da descrição do produto são obrigatorios.
+    </ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-label style="text-align: center;">
+      O botão de cadastro só fica disponivel assim que todos os campos obrigatorios estiverem preenchidos
+    </ion-label>
+  </ion-item>
+</ion-content>
